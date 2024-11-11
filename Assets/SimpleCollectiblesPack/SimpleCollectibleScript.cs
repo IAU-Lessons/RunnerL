@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleCollectibleScript : MonoBehaviour {
-	
+public class SimpleCollectibleScript : MonoBehaviour
+{
 
+
+	[SerializeField] private IntEvent OnScoreGained;
+	
 	[SerializeField] private bool rotate; // do you want it to rotate?
 
 	[SerializeField] private float rotationSpeed;
@@ -37,7 +40,8 @@ public class SimpleCollectibleScript : MonoBehaviour {
 		if(collectEffect)
 			Instantiate(collectEffect, transform.position, Quaternion.identity);
 		
-		GameManager.Instance.IncreaseScore(defaultScore);
+		//GameManager.Instance.IncreaseScore(defaultScore);
+		OnScoreGained.Raise(defaultScore);
 		
 
 		Destroy (gameObject);

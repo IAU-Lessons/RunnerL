@@ -7,6 +7,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    [SerializeField] private VoidEvent OnPlayerCollideFinishObject;
+    
+
     [SerializeField] private float  speed = 5f;
 
     private Transform tr;
@@ -36,7 +39,8 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Finish")
         {
             this._animator.SetBool("isdance", true);
-            GameManager.Instance.isGameStarted = false;
+            //GameManager.Instance.isGameStarted = false;
+            OnPlayerCollideFinishObject.Raise();
         }        
     }
 

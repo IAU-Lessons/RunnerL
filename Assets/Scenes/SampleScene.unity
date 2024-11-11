@@ -347,6 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20df056b2cda6b04698bde7294adda1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPlayerCollideFinishObject: {fileID: 11400000, guid: 63bf02fd8a6ee274da70174fd61c94fa, type: 2}
   speed: 5
 --- !u!136 &203654747
 CapsuleCollider:
@@ -1621,6 +1622,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreField: {fileID: 219331041}
   isGameStarted: 0
+  OnPlayerCollideFinishObject: {fileID: 11400000, guid: 63bf02fd8a6ee274da70174fd61c94fa, type: 2}
+  OnScoreGained: {fileID: 11400000, guid: 818be8ba1589f794983aa0443698f9c7, type: 2}
 --- !u!4 &2038525034
 Transform:
   m_ObjectHideFlags: 0
