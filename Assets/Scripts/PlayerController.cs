@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] private float  speed = 5f;
-
+    [SerializeField] private GameObject finishParticle;
+    [SerializeField] private float horizontalMoveLimits;
+    
+    
     private Transform tr;
     private Animator _animator;
     
@@ -28,7 +31,10 @@ public class PlayerController : MonoBehaviour
         this._animator.SetBool("iswalk", true);
 
         this.tr.position += this.tr.forward * speed * Time.deltaTime;
-        this.tr.Translate(speed * horizontal * Time.deltaTime, 0, 0);
+        Vector3 tempPos = this.tr.position;
+        tempPos.x += speed * horizontal * Time.deltaTime;
+        tempPos.x = Mathf.Clamp(tempPos.x, -horizontalMoveLimits, horizontalMoveLimits);
+        this.tr.position = tempPos;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +43,7 @@ public class PlayerController : MonoBehaviour
         {
             this._animator.SetBool("isdance", true);
             GameManager.Instance.isGameStarted = false;
+            finishParticle?.SetActive(true);
         }        
     }
 

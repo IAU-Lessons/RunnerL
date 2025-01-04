@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33653846698673226
 MeshFilter:
@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotate: 1
-  rotationSpeed: 10
-  collectSound: {fileID: 0}
+  rotationSpeed: 100
+  collectSound: {fileID: 8300000, guid: 2521e5b52bb85e3408307af4437e3b5d, type: 3}
   collectEffect: {fileID: 1702657300312902, guid: a45c51da10cf1a84abc6a99c06951e3f, type: 3}
+  defaultScore: 10
 --- !u!135 &135506371905761694
 SphereCollider:
   m_ObjectHideFlags: 0
