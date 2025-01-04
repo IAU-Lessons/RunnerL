@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
             this._animator.SetBool("isdance", true);
             GameManager.Instance.isGameStarted = false;
             finishParticle?.SetActive(true);
+            GameManager.Instance.LevelFinished();
         }        
     }
 
